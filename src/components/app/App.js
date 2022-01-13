@@ -12,8 +12,10 @@ const App = () => {
 	const [todos, setTodos] = useState([]);
 
 	const onSaveTodo = (todoText) => {
-		const trimmedText = todoText.trim().length > 0;
-			setTodos([...todos, trimmedText])
+		const trimmedText = todoText.trim();
+			if (trimmedText.length > 0) {
+				setTodos([...todos, trimmedText])
+			}
 	}
 
 	const onDeleteTodo = (todoIndex) => {
