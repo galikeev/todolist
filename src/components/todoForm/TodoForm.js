@@ -5,21 +5,22 @@ const TodoForm = ({saveTodo}) => {
 
     const [value, setValue] = useState('');
 
+    const onSubmitTodo = (e) => {
+        e.preventDefault();
+        saveTodo(value);
+        setValue('');
+    }
+
+    const onChangeTodo = (e) => {
+        setValue(e.target.value);
+    }
+
     return (
-        <form
-            onSubmit={e => {
-                e.preventDefault();
-                saveTodo(value);
-                setValue('');
-            }}
-        >
+        <form onSubmit={onSubmitTodo}>
             <TextField
                 variant="filled"
                 label="Add todo"
-                margin="normal"
-                onChange={e => {
-                    setValue(e.target.value);
-                }}
+                onChange={onChangeTodo}
                 value={value}
             />
         </form>
