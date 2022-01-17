@@ -29,7 +29,7 @@ const App = () => {
 				TodoList
 			</Typography>
 			<TodoForm saveTodo={onSaveTodo}/>
-			<TodoList 
+			<TodoList
 				todos={todos}
 				deleteTodo={onDeleteTodo}/>
 			<TodoButtons/>
