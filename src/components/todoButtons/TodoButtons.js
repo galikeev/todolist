@@ -9,6 +9,8 @@ import Popper from '@mui/material/Popper';
 import MenuItem from '@mui/material/MenuItem';
 import MenuList from '@mui/material/MenuList';
 
+import './todoButtons.scss';
+
 const options = [
 	{name: 'Текущие дела', label: 'current'},
 	{name: 'Завершенные дела', label: 'completed'},
@@ -37,7 +39,7 @@ const TodoButtons = (props) => {
 	}
 
 	return (
-		<>
+		<div className="buttons">
 			<ButtonGroup variant="contained" ref={anchorRef} aria-label="split button">
 				<Button>{options[selectedIndex].name}</Button>
 				<Button
@@ -84,7 +86,7 @@ const TodoButtons = (props) => {
 				</Grow>
 				)}
 			</Popper>
-		</>
+		</div>
 	)
 }
 
