@@ -1,5 +1,5 @@
 import { List, ListItem, ListItemSecondaryAction, ListItemText, Checkbox, IconButton, Button} from "@mui/material";
-import DeleteIcon from '@mui/icons-material/Delete';
+import { DeleteRounded } from "@mui/icons-material";
 
 const TodoList = ({todos, onChangeStatusTodo, onAllDeleteTodo}) => {
 
@@ -31,7 +31,7 @@ const TodoList = ({todos, onChangeStatusTodo, onAllDeleteTodo}) => {
                                 aria-label="delete"
                                 onClick={() => {onChangeStatusTodo(todo.id, 'deleted')}}
                             >
-                            <DeleteIcon/>
+                            <DeleteRounded/>
                         </IconButton>}
                     </ListItemSecondaryAction>
                 </ListItem>
