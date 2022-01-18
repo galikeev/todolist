@@ -10,7 +10,7 @@ import '../../style/style.scss';
 const App = () => {
 
 	const [todos, setTodos] = useState([]);
-	const [filter, setFilter] = useState('current')
+	const [filter, setFilter] = useState('current');
 
 	const onSaveTodo = (todoText) => {
 		const trimmedText = todoText.trim();
@@ -19,9 +19,9 @@ const App = () => {
 			}
 	}
 
-	const onDeleteTodo = (id) => {
-		const deletedTodos = todos.map(elem => (elem.id === id) ? {...elem, status: 'deleted'} : elem)
-		setTodos(deletedTodos)
+	const onChangeStatusTodo = (id, status) => {
+		const changedStatusTodo = todos.map(elem => (elem.id === id) ? {...elem, status: status} : elem)
+		setTodos(changedStatusTodo)
 	}
 
 	const onAllDeleteTodo = (todoIndex) => {
@@ -46,7 +46,7 @@ const App = () => {
         setFilter(filter);
     }
 
-	const visibleTodos = filterPost(todos, filter)
+	const visibleTodos = filterPost(todos, filter);
 
 	return (
 		<div className="app">
@@ -56,7 +56,7 @@ const App = () => {
 			<TodoForm saveTodo={onSaveTodo}/>
 			<TodoList 
 				todos={visibleTodos}
-				deleteTodo={onDeleteTodo}/>
+				onChangeStatusTodo={onChangeStatusTodo}/>
 			<TodoButtons onFilterSelect={onFilterSelect}/>
 		</div>
 	);

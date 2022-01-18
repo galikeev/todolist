@@ -1,17 +1,22 @@
 import { List, ListItem, ListItemSecondaryAction, ListItemText, Checkbox, IconButton} from "@mui/material";
 import DeleteIcon from '@mui/icons-material/Delete';
 
-const TodoList = ({todos, deleteTodo}) => {
+const TodoList = ({todos, onChangeStatusTodo, onChangeChexbox}) => {
+
     return (
         <List>
             {todos.map((todo, i) => (
                 <ListItem key={todo.id} dense button>
-                    <Checkbox tabIndex={-1} disableRipple/>
+                    {todo.status === 'completed' || todo.status === 'deleted' ? null : <Checkbox 
+                        tabIndex={-1} 
+                        disableRipple
+                        onChange={() => {onChangeStatusTodo(todo.id, 'completed')}}
+                    />}
                     <ListItemText primary={todo.title}/>
                     <ListItemSecondaryAction>
                         <IconButton 
                             aria-label="delete"
-                            onClick={() => {deleteTodo(todo.id)}}>
+                            onClick={() => {onChangeStatusTodo(todo.id, 'deleted')}}>
                             <DeleteIcon/>
                         </IconButton>
                     </ListItemSecondaryAction>
