@@ -14,11 +14,11 @@ const TodoList = ({todos, onChangeStatusTodo, onChangeChexbox}) => {
                     />}
                     <ListItemText primary={todo.title}/>
                     <ListItemSecondaryAction>
-                        <IconButton 
+                        {todo.status === 'deleted' ? null : <IconButton 
                             aria-label="delete"
                             onClick={() => {onChangeStatusTodo(todo.id, 'deleted')}}>
                             <DeleteIcon/>
-                        </IconButton>
+                        </IconButton>}
                     </ListItemSecondaryAction>
                 </ListItem>
             ))}
