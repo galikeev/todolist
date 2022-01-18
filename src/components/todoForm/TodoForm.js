@@ -23,7 +23,7 @@ const TodoForm = ({saveTodo}) => {
             className="form"
         >
             <TextField
-                style={{'width' : '300px'}}s
+                style={{'width' : '300px'}}
                 margin="normal"
                 variant="filled"
                 label="Add todo"
