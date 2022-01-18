@@ -1,6 +1,6 @@
 # My TodoList
 
-https://app-my-todolist.herokuapp.com/
+https://todo-list-my.herokuapp.com/
 
 ## Technologies
 
