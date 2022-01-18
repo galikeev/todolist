@@ -33,7 +33,7 @@ const TodoButtons = (props) => {
 
 	return (
 		<div className="buttons">
-			<ButtonGroup variant="contained" ref={anchorRef} aria-label="split button">
+			<ButtonGroup onClick={handleToggle} variant="contained" ref={anchorRef} aria-label="split button">
 				<Button>{options[selectedIndex].name}</Button>
 				<Button
 					size="small"
@@ -41,7 +41,6 @@ const TodoButtons = (props) => {
 					aria-expanded={open ? 'true' : undefined}
 					aria-label="select merge strategy"
 					aria-haspopup="menu"
-					onClick={handleToggle}
 				>
 				<ArrowDropDownCircle />
 				</Button>

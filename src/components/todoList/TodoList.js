@@ -1,5 +1,4 @@
-import { List, ListItem, ListItemSecondaryAction, ListItemText, Checkbox, IconButton, Button} from "@mui/material";
-import { DeleteRounded } from "@mui/icons-material";
+import { List, ListItem, ListItemSecondaryAction, ListItemText, Checkbox, Button} from "@mui/material";
 
 const TodoList = ({todos, onChangeStatusTodo, onAllDeleteTodo}) => {
 
@@ -27,12 +26,11 @@ const TodoList = ({todos, onChangeStatusTodo, onAllDeleteTodo}) => {
                             >
                                 удалить полностью
                             </Button> : 
-                            <IconButton 
-                                aria-label="delete"
+                            <Button 
                                 onClick={() => {onChangeStatusTodo(todo.id, 'deleted')}}
                             >
-                            <DeleteRounded/>
-                        </IconButton>}
+                                Удалить
+                            </Button>}
                     </ListItemSecondaryAction>
                 </ListItem>
             ))}
