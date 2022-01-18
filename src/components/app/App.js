@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Typography } from "@mui/material";
 
 import TodoForm from "../todoForm/TodoForm";
@@ -11,6 +11,10 @@ const App = () => {
 
 	const [todos, setTodos] = useState(localStorage.getItem('todos') ? JSON.parse(localStorage.getItem('todos')) : []);
 	const [filter, setFilter] = useState('current');
+
+	useEffect(() => {
+		localStorage.getItem('todos')
+	}, [])
 
 	const onSetTodosWithSave = (newTodos) => {
 		setTodos(newTodos);
