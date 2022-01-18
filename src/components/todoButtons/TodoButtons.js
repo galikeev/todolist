@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import { Button, ButtonGroup, ClickAwayListener, Grow, Paper, Popper, MenuItem, MenuList} from "@mui/material";
-import { ArrowDropDownCircle } from "@mui/icons-material";
+import {ArrowDropDownCircle} from "@mui/icons-material";
 
 import './todoButtons.scss';
 

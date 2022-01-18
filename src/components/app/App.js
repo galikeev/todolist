@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { Typography } from "@mui/material";
 
 import TodoForm from "../todoForm/TodoForm";
 import TodoList from "../todoList/TodoList";
@@ -59,9 +58,9 @@ const App = () => {
 
 	return (
 		<div className="app">
-			<Typography component="h1" variant="h2" style={{'textAlign': 'center'}}>
+			<h1 style={{'textAlign': 'center', 'fontSize' : '50px'}}>
 				TodoList
-			</Typography>
+			</h1>
 			<TodoForm saveTodo={onSaveTodo}/>
 			<TodoList 
 				todos={visibleTodos}
