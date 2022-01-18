@@ -51,7 +51,7 @@ const App = () => {
 	return (
 		<div className="app">
 			<Typography component="h1" variant="h2" style={{'textAlign': 'center'}}>
-				Мой список дел
+				TodoList
 			</Typography>
 			<TodoForm saveTodo={onSaveTodo}/>
 			<TodoList 

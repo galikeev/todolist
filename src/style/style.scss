@@ -46,7 +46,25 @@ input::-webkit-inner-spin-button {
 }
 
 .app {
-    width: 1100px;
+    width: 960px;
     margin: 0 auto;
     padding: 50px 0 50px 0;
+}
+
+@media (max-width: 991px) {
+    .app {
+        width: 720px;
+    }
+}
+
+@media (max-width: 767px) {
+    .app {
+        width: 540px;
+    }
+}
+
+@media (max-width: 575px) {
+    .app {
+        width: 320px;
+    }
 }
