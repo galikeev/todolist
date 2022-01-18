@@ -5,13 +5,13 @@ const TodoList = ({todos, deleteTodo}) => {
     return (
         <List>
             {todos.map((todo, i) => (
-                <ListItem key={i} dense button>
+                <ListItem key={todo.id} dense button>
                     <Checkbox tabIndex={-1} disableRipple/>
-                    <ListItemText primary={todo}/>
+                    <ListItemText primary={todo.title}/>
                     <ListItemSecondaryAction>
                         <IconButton 
                             aria-label="delete"
-                            onClick={() => {deleteTodo(i)}}>
+                            onClick={() => {deleteTodo(todo.id)}}>
                             <DeleteIcon/>
                         </IconButton>
                     </ListItemSecondaryAction>

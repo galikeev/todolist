@@ -9,9 +9,13 @@ import Popper from '@mui/material/Popper';
 import MenuItem from '@mui/material/MenuItem';
 import MenuList from '@mui/material/MenuList';
 
-const options = ['Текущие дела', 'Завершенные дела', 'Удаленные'];
+const options = [
+	{name: 'Текущие дела', label: 'current'},
+	{name: 'Завершенные дела', label: 'completed'},
+	{name: 'Удаленные', label: 'deleted'},
+];
 
-const TodoButtons = () => {
+const TodoButtons = (props) => {
 	const [open, setOpen] = useState(false);
 	const [selectedIndex, setSelectedIndex] = useState(0);
 	const anchorRef = useRef(null);
@@ -35,7 +39,7 @@ const TodoButtons = () => {
 	return (
 		<>
 			<ButtonGroup variant="contained" ref={anchorRef} aria-label="split button">
-				<Button>{options[selectedIndex]}</Button>
+				<Button>{options[selectedIndex].name}</Button>
 				<Button
 					size="small"
 					aria-controls={open ? 'split-button-menu' : undefined}
@@ -67,11 +71,11 @@ const TodoButtons = () => {
 						<MenuList id="split-button-menu">
 							{options.map((option, index) => (
 								<MenuItem
-								key={option}
+								key={option.name}
 								selected={index === selectedIndex}
-								onClick={(event) => handleClick(event, index)}
+								onClick={(event) => {handleClick(event, index); props.onFilterSelect(option.label)}}
 								>
-								{option}
+								{option.name}
 								</MenuItem>
 							))}
 						</MenuList>
