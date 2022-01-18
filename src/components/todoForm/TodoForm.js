@@ -18,6 +18,8 @@ const TodoForm = ({saveTodo}) => {
     return (
         <form onSubmit={onSubmitTodo}>
             <TextField
+                style={{'width' : '300px'}}
+                margin="normal"
                 variant="filled"
                 label="Add todo"
                 onChange={onChangeTodo}

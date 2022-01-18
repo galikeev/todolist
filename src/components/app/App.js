@@ -24,8 +24,8 @@ const App = () => {
 		setTodos(changedStatusTodo)
 	}
 
-	const onAllDeleteTodo = (todoIndex) => {
-		const newTodos = todos.filter(elem => elem.id !== todoIndex);
+	const onAllDeleteTodo = (id) => {
+		const newTodos = todos.filter(elem => elem.id !== id);
 		setTodos(newTodos);
 	}
 
@@ -50,13 +50,14 @@ const App = () => {
 
 	return (
 		<div className="app">
-			<Typography component="h1" variant="h2">
-				TodoList
+			<Typography component="h1" variant="h2" style={{'textAlign': 'center'}}>
+				Мой список дел
 			</Typography>
 			<TodoForm saveTodo={onSaveTodo}/>
 			<TodoList 
 				todos={visibleTodos}
-				onChangeStatusTodo={onChangeStatusTodo}/>
+				onChangeStatusTodo={onChangeStatusTodo}
+				onAllDeleteTodo={onAllDeleteTodo}/>
 			<TodoButtons onFilterSelect={onFilterSelect}/>
 		</div>
 	);
