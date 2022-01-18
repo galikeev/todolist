@@ -1,13 +1,6 @@
 import { useState, useRef } from "react";
-import Button from '@mui/material/Button';
-import ButtonGroup from '@mui/material/ButtonGroup';
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
-import ClickAwayListener from '@mui/material/ClickAwayListener';
-import Grow from '@mui/material/Grow';
-import Paper from '@mui/material/Paper';
-import Popper from '@mui/material/Popper';
-import MenuItem from '@mui/material/MenuItem';
-import MenuList from '@mui/material/MenuList';
+import { Button, ButtonGroup, ClickAwayListener, Grow, Paper, Popper, MenuItem, MenuList} from "@mui/material";
+import { ArrowDropDownCircle } from "@mui/icons-material";
 
 import './todoButtons.scss';
 
@@ -50,7 +43,7 @@ const TodoButtons = (props) => {
 					aria-haspopup="menu"
 					onClick={handleToggle}
 				>
-				<ArrowDropDownIcon />
+				<ArrowDropDownCircle />
 				</Button>
 			</ButtonGroup>
 			<Popper
