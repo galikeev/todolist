@@ -9,24 +9,29 @@ import '../../style/style.scss';
 
 const App = () => {
 
-	const [todos, setTodos] = useState([]);
+	const [todos, setTodos] = useState(localStorage.getItem('todos') ? JSON.parse(localStorage.getItem('todos')) : []);
 	const [filter, setFilter] = useState('current');
+
+	const onSetTodosWithSave = (newTodos) => {
+		setTodos(newTodos);
+		localStorage.setItem('todos', JSON.stringify(newTodos))
+	}
 
 	const onSaveTodo = (todoText) => {
 		const trimmedText = todoText.trim();
 			if (trimmedText.length > 0) {
-				setTodos([ ...todos, {id: todos.length + 1, title: trimmedText, status: 'current'}])
+				onSetTodosWithSave([ ...todos, {id: todos.length + 1, title: trimmedText, status: 'current'}])
 			}
 	}
 
 	const onChangeStatusTodo = (id, status) => {
 		const changedStatusTodo = todos.map(elem => (elem.id === id) ? {...elem, status: status} : elem)
-		setTodos(changedStatusTodo)
+		onSetTodosWithSave(changedStatusTodo)
 	}
 
 	const onAllDeleteTodo = (id) => {
 		const newTodos = todos.filter(elem => elem.id !== id);
-		setTodos(newTodos);
+		onSetTodosWithSave(newTodos);
 	}
 
 	const filterPost = (items, filter) => {

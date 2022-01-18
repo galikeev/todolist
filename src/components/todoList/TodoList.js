@@ -10,6 +10,7 @@ const TodoList = ({todos, onChangeStatusTodo, onAllDeleteTodo}) => {
                     key={todo.id} 
                     dense 
                     button
+                    style={{'margin': '10px 0 10px 0'}}
                 >
                     {todo.status === 'completed' || todo.status === 'deleted' ? 
                         null : 
