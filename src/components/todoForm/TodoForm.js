@@ -25,8 +25,8 @@ const TodoForm = ({saveTodo}) => {
             <TextField
                 style={{'width' : '300px'}}
                 margin="normal"
-                variant="filled"
-                label="Add todo"
+                variant="outlined"
+                label="add todo"
                 onChange={onChangeTodo}
                 value={value}
             />

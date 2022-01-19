@@ -5,8 +5,8 @@ import {ArrowDropDownCircle} from "@mui/icons-material";
 import './todoButtons.scss';
 
 const options = [
-	{name: 'Текущие дела', label: 'current'},
-	{name: 'Завершенные дела', label: 'completed'},
+	{name: 'Текущие', label: 'current'},
+	{name: 'Завершенные', label: 'completed'},
 	{name: 'Удаленные', label: 'deleted'},
 ];
 
@@ -33,6 +33,7 @@ const TodoButtons = (props) => {
 
 	return (
 		<div className="buttons">
+			<div>Фильтр:</div>
 			<ButtonGroup onClick={handleToggle} variant="contained" ref={anchorRef} aria-label="split button">
 				<Button>{options[selectedIndex].name}</Button>
 				<Button

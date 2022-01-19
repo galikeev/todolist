@@ -1,4 +1,6 @@
-import { List, ListItem, ListItemSecondaryAction, ListItemText, Checkbox, Button} from "@mui/material";
+import { List, ListItem, ListItemSecondaryAction, Checkbox, Button} from "@mui/material";
+
+import './todoList.scss';
 
 const TodoList = ({todos, onChangeStatusTodo, onAllDeleteTodo}) => {
 
@@ -17,16 +19,18 @@ const TodoList = ({todos, onChangeStatusTodo, onAllDeleteTodo}) => {
                             tabIndex={-1} 
                             disableRipple
                             onChange={() => {onChangeStatusTodo(todo.id, 'completed')}}/>}
-                    <ListItemText primary={todo.title}/>
+                    <div className="list__title">{todo.title}</div>
                     <ListItemSecondaryAction>
                         {todo.status === 'deleted' ? 
                             <Button 
+                                size="small"
                                 variant="contained" 
                                 onClick={() => onAllDeleteTodo(todo.id)}
                             >
-                                удалить полностью
+                                очистить
                             </Button> : 
                             <Button 
+                                size="small"
                                 onClick={() => {onChangeStatusTodo(todo.id, 'deleted')}}
                             >
                                 Удалить
