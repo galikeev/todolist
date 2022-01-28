@@ -1,4 +1,4 @@
-# My TodoList
+# TodoList on React
 
 https://todo-list-my.herokuapp.com/
 
@@ -7,7 +7,7 @@ https://todo-list-my.herokuapp.com/
 - JS
 - React Hooks
 - MUI
-- SASS
+- SCSS
 
 ### Development
 ```
