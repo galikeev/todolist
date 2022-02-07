@@ -1,6 +1,6 @@
 # TodoList on React
 
-https://todo-list-my.herokuapp.com/
+https://todo-my-app.netlify.app/
 
 ## Technologies
 
